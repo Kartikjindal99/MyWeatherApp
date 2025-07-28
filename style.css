@@ -1,3 +1,4 @@
+
 :root {
     --primary-blue: #3498db;
     --secondary-blue: #5DADE2;
@@ -168,6 +169,9 @@ body {
     color: var(--dark-text);
     padding: 3rem 2.5rem;
     overflow-y: auto;
+    max-height: 90vh; /* Added for scroll on larger screens */
+    box-shadow: 0 8px 25px var(--shadow-light); /* Added shadow to output panel */
+    border-radius: var(--border-radius-main); /* Added border-radius to output panel */
 }
 
 .heading {
@@ -309,9 +313,12 @@ body {
         min-width: unset;
         width: 100%;
         padding: 2.5rem 2rem;
+        box-shadow: none; /* Removed individual panel shadow when stacked */
+        border-radius: 0; /* Removed individual panel border-radius when stacked */
     }
     .weather-output {
-        max-height: 55vh;
+        max-height: 50vh; /* Set explicit max-height for scrolling on smaller screens */
+        margin-top: 1px; /* Small gap to visually separate if needed */
     }
     .weather-input {
         padding-bottom: 3.5rem;

@@ -20,27 +20,27 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Changed to flex-start to prevent vertical squishing on small screens */
+    align-items: flex-start;
     background-color: var(--background-light);
     color: var(--dark-text);
-    padding: 1rem; /* Added some default padding for very small screens */
-    overflow-y: auto; /* Allow vertical scrolling on the body */
+    padding: 0.8rem; /* Slightly reduced padding for very small screens */
+    overflow-y: auto;
 }
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Default to column for mobile */
     width: 100%;
-    max-width: 1200px; /* Limit overall width on large screens */
+    max-width: 1200px;
     background-color: var(--card-background);
-    border-radius: var(--border-radius-main); /* Apply border-radius to the container */
-    box-shadow: 0 10px 30px var(--shadow-light); /* Apply main shadow to the container */
-    overflow: hidden; /* Keep internal content within bounds */
+    border-radius: var(--border-radius-main);
+    box-shadow: 0 10px 30px var(--shadow-light);
+    overflow: hidden;
 }
 
 .weather-section {
     display: flex;
-    flex-direction: column; /* Default to column for mobile */
+    flex-direction: column;
     width: 100%;
     flex-grow: 1;
 }
@@ -53,25 +53,25 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem 1.5rem; /* Adjusted padding for mobile */
+    padding: 1.8rem 1.2rem; /* Reduced top/bottom padding for mobile */
     position: relative;
-    border-radius: var(--border-radius-main); /* Inherit border radius from container */
-    padding-bottom: 3rem; /* Extra padding at the bottom for aesthetic */
+    border-radius: var(--border-radius-main);
+    padding-bottom: 2.5rem; /* Slightly reduced bottom padding */
 }
 
 .input-group {
     position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 2rem; /* Adjusted margin for mobile */
+    margin-bottom: 1.5rem; /* Reduced margin below input group for mobile */
     width: 100%;
-    max-width: 380px; /* Max width for input group */
+    max-width: 350px; /* Slightly tighter max width for input group */
 }
 
 .input-group input {
     width: 100%;
-    padding: 1rem 3.5rem 1rem 1.2rem; /* Adjusted padding */
-    font-size: 1rem; /* Adjusted font size */
+    padding: 0.9rem 3.2rem 0.9rem 1.1rem; /* Adjusted padding */
+    font-size: 0.95rem; /* Adjusted font size */
     border-radius: var(--border-radius-main);
     border: none;
     outline: none;
@@ -92,26 +92,26 @@ body {
 
 .input-group .converter {
     position: absolute;
-    right: 65px; /* Adjusted position */
-    font-size: 0.95rem; /* Adjusted font size */
+    right: 60px; /* Adjusted position */
+    font-size: 0.9rem; /* Adjusted font size */
     border: none;
     outline: none;
     background: transparent;
     color: var(--dark-text);
     cursor: pointer;
-    padding: 4px; /* Adjusted padding */
+    padding: 3px; /* Adjusted padding */
     border-radius: var(--border-radius-main);
     appearance: none;
     background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13%205.4l-118%20118.3L18.7%2074.9c-2.6-2.6-6-4-9.7-4s-7.1%201.4-9.7%204c-5.4%205.4-5.4%2014.2%200%2019.6l125%20125.1c2.6%202.6%206%204%209.7%204%203.7%200%207.1-1.4%209.7-4l125-125.1c5.4-5.4%205.4-14.2%200-19.6z%22%2F%3E%3C%2Fsvg%3E');
     background-repeat: no-repeat;
-    background-position: right 6px center; /* Adjusted position */
-    background-size: 10px; /* Adjusted size */
+    background-position: right 5px center; /* Adjusted position */
+    background-size: 9px; /* Adjusted size */
 }
 
 .input-group .fa-search {
     position: absolute;
-    right: 20px; /* Adjusted position */
-    font-size: 1.2rem; /* Adjusted font size */
+    right: 18px; /* Adjusted position */
+    font-size: 1.1rem; /* Adjusted font size */
     color: var(--dark-text);
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -122,61 +122,60 @@ body {
 }
 
 .weather-icon {
-    margin-bottom: 1.2rem; /* Adjusted margin */
+    margin-bottom: 1rem; /* Adjusted margin */
 }
 .weather-icon img {
-    width: 120px; /* Adjusted size for mobile */
-    height: 120px; /* Adjusted size for mobile */
+    width: 100px; /* Further adjusted size for mobile */
+    height: 100px; /* Further adjusted size for mobile */
     animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); } /* Adjusted float amount */
+    50% { transform: translateY(-6px); } /* Slightly less float for smaller icon */
     100% { transform: translateY(0px); }
 }
 
 .temperature {
-    font-size: 4rem; /* Adjusted font size for mobile */
+    font-size: 3.5rem; /* Adjusted font size for mobile */
     font-weight: 700;
     line-height: 1;
-    margin-bottom: 0.7rem; /* Adjusted margin */
+    margin-bottom: 0.5rem; /* Reduced margin */
 }
 
 .feels-like,
 .description {
-    font-size: 1.1rem; /* Adjusted font size for mobile */
+    font-size: 1rem; /* Adjusted font size for mobile */
     font-weight: 400;
-    margin-bottom: 0.7rem; /* Adjusted margin */
+    margin-bottom: 0.5rem; /* Reduced margin */
     text-transform: capitalize;
 }
 
 .weather-input hr {
-    width: 80%; /* Adjusted width */
+    width: 80%;
     border: none;
     border-top: 1px solid rgba(255, 255, 255, 0.4);
-    margin: 1.8rem 0; /* Adjusted margin */
+    margin: 1.5rem 0; /* Reduced margin */
 }
 
 .date,
 .city {
-    font-size: 1rem; /* Adjusted font size for mobile */
-    margin: 0.5rem 0; /* Adjusted margin */
+    font-size: 0.9rem; /* Adjusted font size for mobile */
+    margin: 0.4rem 0; /* Reduced margin */
     font-weight: 300;
 }
 
 .weather-output {
     background-color: var(--background-light);
     color: var(--dark-text);
-    padding: 2rem 1.5rem; /* Adjusted padding for mobile */
-    overflow-y: auto; /* Allow scrolling within this section */
-    /* max-height removed, let content dictate height, or add back if specific behavior is needed */
+    padding: 1.8rem 1.2rem; /* Adjusted padding for mobile */
+    overflow-y: auto;
 }
 
 .heading {
-    font-size: 2rem; /* Adjusted font size for mobile */
+    font-size: 1.8rem; /* Adjusted font size for mobile */
     font-weight: 700;
-    margin-bottom: 1.8rem; /* Adjusted margin */
+    margin-bottom: 1.5rem; /* Adjusted margin */
     color: var(--primary-blue);
     text-align: center;
     position: relative;
@@ -186,32 +185,32 @@ body {
     content: '';
     position: absolute;
     left: 50%;
-    bottom: -8px; /* Adjusted position */
+    bottom: -7px; /* Adjusted position */
     transform: translateX(-50%);
-    width: 50px; /* Adjusted width */
-    height: 3px; /* Adjusted height */
+    width: 40px; /* Adjusted width */
+    height: 3px;
     background-color: var(--primary-blue);
     border-radius: 2px;
 }
 
 .forecast-heading::after {
-    width: 90px; /* Adjusted width */
+    width: 80px; /* Adjusted width */
 }
 
 .highlights {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Smaller min-width for mobile */
-    gap: 1.2rem; /* Adjusted gap */
-    margin-bottom: 2.5rem; /* Adjusted margin */
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Slightly smaller min-width */
+    gap: 1rem; /* Adjusted gap */
+    margin-bottom: 2rem; /* Adjusted margin */
 }
 
 .highlights div {
     background-color: var(--card-background);
-    padding: 1.5rem; /* Adjusted padding */
+    padding: 1.2rem; /* Adjusted padding */
     border-radius: var(--border-radius-main);
     text-align: center;
     color: var(--dark-text);
-    box-shadow: 0 6px 20px var(--shadow-light); /* Adjusted shadow */
+    box-shadow: 0 5px 15px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -220,32 +219,32 @@ body {
 }
 
 .highlights div:hover {
-    transform: translateY(-5px); /* Adjusted hover effect */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Adjusted hover shadow */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .highlights i {
-    font-size: 2.5rem; /* Adjusted font size */
-    margin-bottom: 0.8rem; /* Adjusted margin */
+    font-size: 2rem; /* Adjusted font size */
+    margin-bottom: 0.7rem; /* Adjusted margin */
     color: var(--primary-blue);
 }
 
 .highlights p {
-    font-size: 0.9rem; /* Adjusted font size */
-    margin-bottom: 0.4rem; /* Adjusted margin */
+    font-size: 0.8rem; /* Adjusted font size */
+    margin-bottom: 0.3rem; /* Adjusted margin */
     font-weight: 400;
     color: #6c757d;
 }
 
 .highlights h1 {
-    font-size: 1.8rem; /* Adjusted font size */
+    font-size: 1.6rem; /* Adjusted font size */
     font-weight: 700;
     color: var(--dark-text);
 }
 
 .highlights div:nth-child(3) p {
-    font-size: 1rem; /* Adjusted font size */
-    margin-bottom: 0.2rem; /* Adjusted margin */
+    font-size: 0.9rem; /* Adjusted font size */
+    margin-bottom: 0.2rem;
     color: var(--dark-text);
 }
 .highlights div:nth-child(3) i {
@@ -254,92 +253,92 @@ body {
 
 .forecast {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller min-width for mobile */
-    gap: 1rem; /* Adjusted gap */
-    margin-top: 2rem; /* Adjusted margin */
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Slightly smaller min-width */
+    gap: 0.8rem; /* Adjusted gap */
+    margin-top: 1.8rem; /* Adjusted margin */
 }
 
 .forecast div {
     background-color: var(--card-background);
-    padding: 1.5rem 1rem; /* Adjusted padding */
+    padding: 1.2rem 0.8rem; /* Adjusted padding */
     border-radius: var(--border-radius-main);
     text-align: center;
     color: var(--dark-text);
-    box-shadow: 0 5px 15px var(--shadow-light); /* Adjusted shadow */
+    box-shadow: 0 4px 12px var(--shadow-light); /* Adjusted shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .forecast div:hover {
-    transform: translateY(-4px); /* Adjusted hover effect */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Adjusted hover shadow */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .forecast img {
-    width: 60px; /* Adjusted size */
-    height: 60px; /* Adjusted size */
-    margin: 0.6rem 0; /* Adjusted margin */
+    width: 50px; /* Adjusted size */
+    height: 50px; /* Adjusted size */
+    margin: 0.5rem 0; /* Adjusted margin */
 }
 
 .forecast p {
-    font-size: 0.85rem; /* Adjusted font size */
-    margin-bottom: 0.3rem; /* Adjusted margin */
+    font-size: 0.75rem; /* Adjusted font size */
+    margin-bottom: 0.2rem;
     color: #6c757d;
 }
 
 .forecast p strong {
-    font-size: 1rem; /* Adjusted font size */
+    font-size: 0.9rem; /* Adjusted font size */
     font-weight: 600;
     color: var(--dark-text);
 }
 
 .no-data-message, .error-message {
     text-align: center;
-    font-size: 1rem; /* Adjusted font size */
+    font-size: 0.9rem; /* Adjusted font size */
     color: #888;
-    padding: 15px; /* Adjusted padding */
+    padding: 12px;
 }
 .error-message {
     color: #dc3545;
     font-weight: 500;
 }
 
-/* --- Media Queries for larger screens --- */
+/* --- Media Queries for larger screens (from previous version) --- */
 
 /* Tablet and larger screens */
 @media (min-width: 768px) {
     .container {
-        display: flex; /* Ensure it remains flex for wider screens */
-        flex-direction: row; /* Layout as row for wider screens */
-        height: 90vh; /* Fixed height for larger screens to make panels side-by-side */
+        display: flex;
+        flex-direction: row;
+        height: 90vh;
         align-items: stretch;
-        margin: 2rem; /* Add some margin around the container */
+        margin: 2rem;
     }
 
     body {
-        padding: 0; /* Remove body padding when container has margin */
-        align-items: center; /* Center container vertically */
+        padding: 0;
+        align-items: center;
     }
 
     .weather-section {
-        flex-direction: row; /* Restore row direction for tablets and desktops */
+        flex-direction: row;
     }
 
     .weather-input {
         flex: 1;
-        min-width: 350px; /* Minimum width for the input section */
-        max-width: 450px; /* Maximum width for input section */
-        padding: 3rem 2.5rem; /* Original padding */
-        border-radius: var(--border-radius-main) 0 0 var(--border-radius-main); /* Rounded only left side */
+        min-width: 350px;
+        max-width: 450px;
+        padding: 3rem 2.5rem;
+        border-radius: var(--border-radius-main) 0 0 var(--border-radius-main);
         padding-bottom: 3rem;
     }
 
     .weather-output {
         flex: 2;
-        min-width: 400px; /* Minimum width for the output section */
-        padding: 3rem 2.5rem; /* Original padding */
-        box-shadow: 0 8px 25px var(--shadow-light); /* Add shadow back for output panel */
-        border-radius: 0 var(--border-radius-main) var(--border-radius-main) 0; /* Rounded only right side */
-        max-height: unset; /* Remove explicit max-height, let overflow handle it */
+        min-width: 400px;
+        padding: 3rem 2.5rem;
+        box-shadow: 0 8px 25px var(--shadow-light);
+        border-radius: 0 var(--border-radius-main) var(--border-radius-main) 0;
+        max-height: unset;
     }
 
     .input-group {
@@ -469,24 +468,88 @@ body {
 /* Specific adjustments for smaller tablets (portrait) */
 @media (max-width: 1024px) and (min-width: 768px) {
     .container {
-        height: auto; /* Allow height to be determined by content */
-        max-width: 760px; /* Constrain width to typical tablet size */
-        flex-direction: column; /* Stack vertically for these widths */
+        height: auto;
+        max-width: 760px;
+        flex-direction: column;
     }
 
     .weather-input,
     .weather-output {
         min-width: unset;
         width: 100%;
-        border-radius: var(--border-radius-main); /* Re-apply full border radius when stacked */
-        box-shadow: 0 8px 25px var(--shadow-light); /* Add shadow to individual panels when stacked */
+        border-radius: var(--border-radius-main);
+        box-shadow: 0 8px 25px var(--shadow-light);
     }
 
     .weather-output {
-        margin-top: 20px; /* Space between the stacked sections */
-        max-height: 50vh; /* Allow scrolling for output on tablets */
+        margin-top: 20px;
+        max-height: 50vh;
     }
     .weather-input {
         padding-bottom: 3rem;
+    }
+}
+
+/* Specific adjustments for very small phones (e.g., 320px width) */
+@media (max-width: 360px) {
+    .weather-input {
+        padding: 1.5rem 0.8rem; /* Even less padding for very small screens */
+    }
+    .input-group {
+        margin-bottom: 1rem;
+    }
+    .input-group input {
+        font-size: 0.85rem;
+        padding: 0.8rem 2.8rem 0.8rem 0.8rem;
+    }
+    .input-group .converter {
+        right: 50px;
+        font-size: 0.8rem;
+    }
+    .input-group .fa-search {
+        right: 15px;
+        font-size: 1rem;
+    }
+    .weather-icon img {
+        width: 80px; /* Even smaller icon for very small screens */
+        height: 80px;
+    }
+    .temperature {
+        font-size: 3rem; /* Adjusted font size */
+    }
+    .feels-like, .description {
+        font-size: 0.9rem;
+    }
+    .date, .city {
+        font-size: 0.8rem;
+    }
+    .heading {
+        font-size: 1.5rem;
+    }
+    .highlights {
+        grid-template-columns: 1fr; /* Stack highlights vertically on very small screens */
+        gap: 0.8rem;
+    }
+    .highlights div {
+        padding: 1rem;
+    }
+    .highlights i {
+        font-size: 1.8rem;
+    }
+    .highlights h1 {
+        font-size: 1.3rem;
+    }
+    .forecast {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for forecast on very small screens */
+    }
+    .forecast img {
+        width: 40px;
+        height: 40px;
+    }
+    .forecast p {
+        font-size: 0.7rem;
+    }
+    .forecast p strong {
+        font-size: 0.8rem;
     }
 }
